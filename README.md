@@ -1,6 +1,6 @@
-# 🛍️ BAG — Full-Stack E-Commerce Platform
+# 🛍️ BAGGIFY — Full-Stack E-Commerce Platform
 
-BAG is a full-stack **MERN e-commerce application** designed for shopping bags online.
+BAGGiFY is a full-stack **MERN e-commerce application** designed for shopping bags online.
 
 The platform provides customers with a complete online shopping experience, including browsing products, searching and filtering products, managing a shopping cart, checking out, making payments, managing their account, and tracking orders.
 
@@ -10,7 +10,7 @@ It also includes a dedicated **admin dashboard** for managing products, categori
 
 ## ✨ Project Overview
 
-BAG is divided into two main applications:
+BAGGIFY is divided into two main applications:
 
 - **Client** — React-based frontend application
 - **Server** — Node.js and Express-based REST API
@@ -88,7 +88,7 @@ The client communicates with the server through REST APIs, while the server mana
 
 # 📋 Prerequisites
 
-Before running BAG locally, make sure you have the following installed:
+Before running BAGGIFY locally, make sure you have the following installed:
 
 - **Node.js**
 - **npm**
@@ -187,7 +187,7 @@ Refer to the dedicated server documentation for the complete backend environment
 
 # ▶️ Running the Application
 
-BAG consists of two separate applications that need to run simultaneously.
+BAGGIFY consists of two separate applications that need to run simultaneously.
 
 ## Start the Backend
 
@@ -231,7 +231,7 @@ http://localhost:5000/api
 
 # 🔄 Application Architecture
 
-The general architecture of BAG is:
+The general architecture of BAGGIFY is:
 
 ```text
                     ┌─────────────────────┐
@@ -266,7 +266,7 @@ The general architecture of BAG is:
 # 📁 Project Structure
 
 ```text
-BAG/
+baggify-ecommerce-platform/
 │
 ├── client/
 │   ├── README.md
@@ -373,7 +373,7 @@ Only public/client-safe configuration should be exposed to the frontend.
 
 # 💳 Payments
 
-BAG supports:
+BAGGIFY supports:
 
 - **Stripe**
 
@@ -387,7 +387,7 @@ See the server documentation for backend payment configuration.
 
 # 🔑 Authentication
 
-BAG supports multiple authentication methods:
+BAGGIFY supports multiple authentication methods:
 
 - Standard authentication
 - OTP-based authentication
@@ -420,7 +420,7 @@ Administrators can:
 
 # 🧑‍💼 Admin Dashboard
 
-BAG includes an administrative interface for managing the platform.
+BAGGIFY includes an administrative interface for managing the platform.
 
 Administrators can manage:
 
@@ -581,7 +581,7 @@ Check:
 
 **Status:** In Development
 
-BAG is currently being developed and has not yet been deployed to production.
+BAGGIFY is currently being developed and has not yet been deployed to production.
 
 The current configuration is intended for local development.
 
@@ -597,6 +597,6 @@ The current configuration is intended for local development.
 
 ---
 
-# 🛍️ BAG
+# 🛍️ BAGGIFY
 
 **A modern full-stack e-commerce platform for discovering and shopping bags online.**
