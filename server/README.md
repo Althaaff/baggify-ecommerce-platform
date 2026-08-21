@@ -1,6 +1,6 @@
-# ⚙️ BAG — Backend
+# ⚙️ BAGGIFY — Backend
 
-The backend API for **BAG**, a full-stack MERN e-commerce platform for shopping bags online.
+The backend API for **BAGGIFY**, a full-stack MERN e-commerce platform for shopping bags online.
 
 The backend provides REST APIs for the frontend and handles authentication, users, products, categories, cart management, addresses, orders, payments, reviews, image uploads, order tracking, and admin operations.
 
@@ -8,7 +8,7 @@ The backend provides REST APIs for the frontend and handles authentication, user
 
 # 📦 Project Overview
 
-BAG's backend is built with **Node.js, Express.js, MongoDB, and Mongoose**.
+BAGGIFY's backend is built with **Node.js, Express.js, MongoDB, and Mongoose**.
 
 The backend is responsible for:
 
@@ -1266,6 +1266,6 @@ The current configuration is intended primarily for local development.
 
 ---
 
-# 🛍️ BAG
+# 🛍️ BAGGIFY
 
 **A modern full-stack e-commerce platform for discovering and shopping bags online.**
