@@ -110,13 +110,13 @@ You will also need valid credentials/configuration for the third-party services 
 ## 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone  https://github.com/Althaaff/baggify-ecommerce-platform.git
 ```
 
 Navigate into the project:
 
 ```bash
-cd <project-directory>
+cd baggify-ecommerce-platform
 ```
 
 ---
