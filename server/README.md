@@ -183,13 +183,13 @@ npm --version
 From the project repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Althaaff/baggify-ecommerce-platform.git
 ```
 
 Navigate into the project:
 
 ```bash
-cd <project-directory>
+cd baggify-ecommerce-platform
 ```
 
 ---
