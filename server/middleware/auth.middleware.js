@@ -38,3 +38,25 @@ export const protect = async (req, res, next) => {
       .json({ success: false, message: "Invalid or expired token" });
   }
 };
+
+// optional protect :
+export const optionalProtect = async (req, res, next) => {
+  let token;
+
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    try {
+      token = req.headers.authorization.split(" ")[1];
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      req.user = await User.findById(decoded.userId).select("-otp -otpExpiry");
+    } catch (error) {
+      // token invalid or if expired treat silently as guest
+      req.user = null;
+    }
+  }
+
+  // continue without throwing 401 error if token is absent
+  next();
+};

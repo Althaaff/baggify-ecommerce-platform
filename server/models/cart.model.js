@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const CartItemSchema = new mongoose.Schema(
   {
     productId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Product",
       required: [true, "Product Id is required"],
     },
@@ -52,12 +52,10 @@ const CartItemSchema = new mongoose.Schema(
     // when item is added to cart :
     addedAt: {
       type: Date,
-      default: Date.now(),
+      default: Date.now,
     },
   },
-  {
-    _id: true,
-  },
+  { _id: true },
 );
 
 const CartSchema = new mongoose.Schema(
@@ -65,9 +63,13 @@ const CartSchema = new mongoose.Schema(
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: [true, "User Id is required"],
+      default: null,
       index: true,
-      unique: true, // one cart per user
+    },
+    sessionId: {
+      type: String,
+      default: null,
+      index: true,
     },
     items: {
       type: [CartItemSchema],
@@ -109,12 +111,6 @@ const CartSchema = new mongoose.Schema(
       index: true,
     },
 
-    sessionId: {
-      type: String,
-      index: true,
-      sparse: true,
-    },
-
     currency: {
       type: String,
       uppercase: true,
@@ -143,9 +139,34 @@ const CartSchema = new mongoose.Schema(
   },
 );
 
-// compound index for efficient queries:
-CartSchema.index({ userId: 1, status: 1 });
+// ensures a user can only have ONE active cart at a time
+CartSchema.index(
+  { userId: 1, status: 1 },
+  {
+    unique: true,
+    partialFilterExpression: {
+      userId: { $type: "objectId" },
+      status: "active",
+    },
+  },
+);
+
+// ensures a guest session can only have ONE active cart at a time
+CartSchema.index(
+  { sessionId: 1, status: 1 },
+  {
+    unique: true,
+    partialFilterExpression: {
+      sessionId: { $type: "string" },
+      status: "active",
+    },
+  },
+);
+
+// speeds up abandoned cart queries and activity tracking
 CartSchema.index({ status: 1, lastActivityAt: -1 });
+
+// speeds up inventory checks and product queries inside cart arrays
 CartSchema.index({ "items.productId": 1 });
 
 const Cart = mongoose.model("Cart", CartSchema);

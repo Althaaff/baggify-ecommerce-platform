@@ -7,19 +7,22 @@ import {
   removeFromCart,
   updateCartItemQuantity,
   reorderItems,
+  mergeGuestCart,
 } from "../../controllers/user/cart.controller.js";
-import { protect } from "../../middleware/auth.middleware.js";
+import { optionalProtect, protect } from "../../middleware/auth.middleware.js";
 
 const router = express.Router();
 
-router.use(protect);
+// public / hybrid routes (support both guests & authenticated users)
+router.post("/add", optionalProtect, addToCart);
+router.get("/", optionalProtect, getCart);
+router.delete("/clear", optionalProtect, clearCart);
+router.delete("/remove/:itemId", optionalProtect, removeFromCart);
+router.get("/count", optionalProtect, getCartCount);
+router.patch("/update/:itemId", optionalProtect, updateCartItemQuantity);
 
-router.post("/add", addToCart);
-router.get("/", getCart);
-router.delete("/clear", clearCart);
-router.delete("/remove/:itemId", removeFromCart);
-router.get("/count", getCartCount);
-router.patch("/update/:itemId", updateCartItemQuantity);
-router.post("/reorder", reorderItems);
+// protected routes (strictly require logged-in user)
+router.post("/merge", protect, mergeGuestCart);
+router.post("/reorder", protect, reorderItems);
 
 export default router;
