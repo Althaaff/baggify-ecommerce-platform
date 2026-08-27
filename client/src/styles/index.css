@@ -1,0 +1,335 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, ::before, ::after {
+    font-family: 'Instrument Sans', sans-serif;
+  }
+}
+
+.text-slide {
+  transition: transform 0.5s ease;
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -ms-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  font-family: "Neuzeit S", sans-serif; 
+  font-size: 13.209px;
+}
+
+body {
+  font-weight: normal;
+}
+
+
+.ibm-plex-serif-thin {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.ibm-plex-serif-extralight {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.ibm-plex-serif-light {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-serif-regular {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-serif-medium {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-serif-semibold {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-serif-bold {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-serif-thin-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ibm-plex-serif-extralight-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.ibm-plex-serif-light-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-serif-regular-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ibm-plex-serif-medium-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ibm-plex-serif-semibold-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ibm-plex-serif-bold-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+.link-underline span {
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+}
+.link-underline:hover span {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.link-underline:not(:hover) span {
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+
+/* tailwind.config.css or globals.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;      
+}
+
+.placeholder {
+  color: rgb(122, 121, 121);
+}
+
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-card h1 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 28px;
+}
+
+.login-card p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.hint {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+
+/* google login style */
+
+/* Previous CSS + these additions */
+
+.google-login-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #999;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.divider span {
+  padding: 0 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Rest of your existing CSS... */
+
+
+/* google style end */
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.alert-error {
+  background: #fee;
+  color: #c33;
+  border: 1px solid #fcc;
+}
+
+.alert-success {
+  background: #efe;
+  color: #3c3;
+  border: 1px solid #cfc;
+}
+
+select::-webkit-scrollbar {
+  display: none;
+}
+
+/* global font family */
+body {
+  font-family: "Instrument Sans", sans-serif; 
+  font-weight: normal;
+}
+
+
+/* Custom CSS */
+
+@keyframes slide {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.animate-slide {
+  background-size: 200% 100%;
+  animation: slide 0.5s forwards;
+  -webkit-animation: slide 0.5s forwards;
+}
+
+
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+} 
