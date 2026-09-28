@@ -1,0 +1,540 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   PaymentPage.css - Complete Styling for Payment Page
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Reset & Base Styles ────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.payment-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.payment-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LEFT SIDE: Payment Methods Section
+═══════════════════════════════════════════════════════════════════════════ */
+
+.payment-methods-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.payment-methods-section h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ─── Payment Option Cards ────────────────────────────────────────────────── */
+
+.payment-option-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.payment-option-card:hover {
+  border-color: #4CAF50;
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.15);
+}
+
+.payment-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.payment-header input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #4CAF50;
+}
+
+.payment-header label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.payment-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.payment-icon {
+  font-size: 28px;
+}
+
+.payment-label strong {
+  font-size: 18px;
+  color: #1a1a1a;
+  display: block;
+}
+
+.payment-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STRIPE CHECKOUT FORM
+═══════════════════════════════════════════════════════════════════════════ */
+
+.stripe-container {
+  margin-top: 20px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.stripe-checkout-form {
+  width: 100%;
+}
+
+/* ─── Card Element Container ──────────────────────────────────────────────── */
+
+.card-element-container {
+  margin-bottom: 20px;
+}
+
+.card-element-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1a1a1a;
+}
+
+.card-element-wrapper {
+  padding: 14px 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.card-element-wrapper:focus-within {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Stripe's CardElement will be inserted here */
+#card-element {
+  padding: 0;
+}
+
+/* ─── Error Message ───────────────────────────────────────────────────────── */
+
+.error-message {
+  color: #dc2626;
+  font-size: 14px;
+  margin: 15px 0;
+  padding: 12px 16px;
+  background: #fee2e2;
+  border-radius: 6px;
+  border-left: 4px solid #dc2626;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── Pay Button ──────────────────────────────────────────────────────────── */
+
+.stripe-pay-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.stripe-pay-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.stripe-pay-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ─── Security Info ───────────────────────────────────────────────────────── */
+
+.secure-payment-info {
+  text-align: center;
+  margin-top: 15px;
+  padding: 12px;
+  background: #f0f9ff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lock-icon {
+  font-size: 16px;
+}
+
+.secure-payment-info p {
+  font-size: 13px;
+  color: #0369a1;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CASH ON DELIVERY SECTION
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cod-info {
+  margin-top: 20px;
+  padding: 25px;
+  background: #fffbeb;
+  border-radius: 10px;
+  border: 1px solid #fde68a;
+}
+
+.cod-description {
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #78350f;
+  line-height: 1.6;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #FF6B00, #e55d00);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
+
+.place-order-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e55d00, #cc5200);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 0, 0.4);
+}
+
+.place-order-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RIGHT SIDE: Order Summary Sidebar
+═══════════════════════════════════════════════════════════════════════════ */
+
+.order-summary-sidebar {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.order-summary-sidebar h3 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 15px;
+}
+
+.summary-section {
+  margin-bottom: 25px;
+}
+
+.summary-section h4 {
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ─── Address Card ────────────────────────────────────────────────────────── */
+
+.address-card {
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 4px solid #4CAF50;
+}
+
+.address-card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.address-name {
+  font-size: 16px !important;
+  color: #1a1a1a !important;
+  margin-bottom: 8px !important;
+}
+
+.address-phone {
+  margin-top: 10px !important;
+  color: #4CAF50 !important;
+  font-weight: 500;
+}
+
+/* ─── Items List ──────────────────────────────────────────────────────────── */
+
+.items-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.item-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.item-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.item-qty {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.item-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ─── Price Details ───────────────────────────────────────────────────────── */
+
+.price-details {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #374151;
+}
+
+.price-row:last-child {
+  margin-bottom: 0;
+}
+
+.discount-row {
+  color: #16a34a;
+}
+
+.discount-amount {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.free-shipping {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #d1d5db, transparent);
+  margin: 16px 0;
+}
+
+.total-row {
+  font-size: 18px;
+  color: #1a1a1a;
+  padding-top: 12px;
+}
+
+/* ─── Savings Badge ───────────────────────────────────────────────────────── */
+
+.savings-badge {
+  text-align: center;
+  padding: 14px;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LOADING & ERROR STATES
+═══════════════════════════════════════════════════════════════════════════ */
+
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+  padding: 40px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p,
+.error-container p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.error-container h2 {
+  font-size: 24px;
+  color: #1a1a1a;
+}
+
+.error-container button {
+  padding: 12px 24px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.error-container button:hover {
+  background: #45a049;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 968px) {
+  .payment-container {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary-sidebar {
+    position: static;
+    order: -1; /* Show summary first on mobile */
+  }
+}
+
+@media (max-width: 640px) {
+  .payment-page {
+    padding: 15px;
+  }
+
+  .payment-methods-section,
+  .order-summary-sidebar {
+    padding: 20px;
+  }
+
+  .payment-methods-section h2,
+  .order-summary-sidebar h3 {
+    font-size: 20px;
+  }
+
+  .payment-icon {
+    font-size: 24px;
+  }
+
+  .item-image {
+    width: 50px;
+    height: 50px;
+  }
+}
